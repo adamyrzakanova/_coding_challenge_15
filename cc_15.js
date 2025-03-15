@@ -41,3 +41,23 @@ riskCard.innerHTML = `
     event.stopPropagation();
 });
 
+ // Task 3 - Removing Risk Items
+ riskCard.querySelector(".resolveBtn").addEventListener("click", function() {
+    riskCard.remove();
+});
+
+riskDashboard.appendChild(riskCard);
+}
+
+// Handling form submission to add risks dynamically
+riskForm.addEventListener("submit", function(event) {
+event.preventDefault();
+
+const riskName = document.getElementById("riskName").value;
+const riskLevel = document.getElementById("riskLevel").value;
+const department = document.getElementById("department").value;
+
+addRiskItem(riskName, riskLevel, department);
+
+riskForm.reset();
+});
