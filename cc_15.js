@@ -36,3 +36,8 @@ riskCard.innerHTML = `
     <button class="resolveBtn">Resolve</button>
 `;\
 
+ // Task 6 - Handling Event Propagation
+ riskCard.addEventListener("click", function(event) {
+    event.stopPropagation();
+});
+
