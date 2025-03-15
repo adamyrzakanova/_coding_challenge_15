@@ -19,4 +19,20 @@ function addRiskItem(riskName, riskLevel, department) {
     `;
     riskDashboard.appendChild(riskCard);
 }       
-        
+
+// Task 4 - Risk Categorization (Color Coding)
+if (riskLevel === "Low") {
+    riskCard.classList.add("low");
+} else if (riskLevel === "Medium") {
+    riskCard.classList.add("medium");
+} else {
+    riskCard.classList.add("high");
+}
+
+riskCard.innerHTML = `
+    <strong>Risk:</strong> ${riskName} <br>
+    <strong>Level:</strong> <span class="riskLevel">${riskLevel}</span> <br>
+    <strong>Department:</strong> ${department}
+    <button class="resolveBtn">Resolve</button>
+`;\
+
