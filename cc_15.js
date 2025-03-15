@@ -61,3 +61,30 @@ addRiskItem(riskName, riskLevel, department);
 
 riskForm.reset();
 });
+
+// Task 5 - Implementing Bulk Updates
+increaseRiskLevelsBtn.addEventListener("click", function() {
+    document.querySelectorAll(".riskCard").forEach(card => {
+        let levelSpan = card.querySelector(".riskLevel");
+        let currentLevel = levelSpan.innerText;
+
+        let newLevel;
+        if (currentLevel === "Low") newLevel = "Medium";
+        else if (currentLevel === "Medium") newLevel = "High";
+        else newLevel = "High";
+
+        levelSpan.innerText = newLevel;
+
+        // Update color accordingly
+        card.classList.remove("low", "medium", "high");
+        if (newLevel === "Low") card.classList.add("low");
+        else if (newLevel === "Medium") card.classList.add("medium");
+        else card.classList.add("high");
+    });
+});
+
+// Preload Test Cases
+addRiskItem("Data Breach", "High", "IT");
+addRiskItem("Supply Chain Disruption", "Medium", "Operations");
+addRiskItem("Market Fluctuations", "High", "Finance");
+});
